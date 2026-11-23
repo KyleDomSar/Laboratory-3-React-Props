@@ -69,8 +69,11 @@ function App() {
                 inStock={product.inStock}
                 onAddToCart={handleAddToCart}
               >
-                {product.id === 1 && <span>New</span>}
-                {product.id === 5 && <span>Sale</span>}
+                {product.id === 1 ? (
+                  <span>New</span>
+                ) : product.id === 5 ? (
+                  <span>Sale</span>
+                ) : null}
               </ProductCard>
             ))}
           </div>
