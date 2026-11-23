@@ -255,3 +255,36 @@ a {
     line-height: 1.5;
   }
 }
+
+.results-summary {
+  margin: -4px 0 14px;
+  color: #737b87;
+  font-size: 0.8rem;
+}
+
+.results-summary strong {
+  color: #343a45;
+  font-weight: 700;
+}
+
+.empty-state {
+  padding: 42px 20px;
+  border: 1px dashed #d8dde4;
+  border-radius: 10px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.empty-state h3 {
+  margin: 0;
+  color: #343a45;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.empty-state p {
+  margin: 8px 0 0;
+  color: #858c97;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
