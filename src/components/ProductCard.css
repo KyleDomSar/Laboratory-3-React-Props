@@ -1,160 +1,135 @@
 .product-card {
-  position: relative;
   display: flex;
-  min-height: 340px;
+  min-height: 220px;
   flex-direction: column;
-  padding: 20px;
-  overflow: hidden;
-  border: 1px solid #e6eaf0;
-  border-radius: 18px;
+  padding: 18px;
+  border: 1px solid #e3e6eb;
+  border-radius: 10px;
   background: #ffffff;
-  box-shadow: 0 5px 18px rgba(24, 39, 75, 0.045);
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease,
-    border-color 180ms ease;
+  transition: border-color 160ms ease;
 }
 
 .product-card:hover {
-  transform: translateY(-4px);
-  border-color: #cbd5e1;
-  box-shadow: 0 12px 28px rgba(24, 39, 75, 0.09);
+  border-color: #c4c9d2;
 }
 
 .product-card--out-of-stock {
-  background: #f7f8fa;
-  opacity: 0.62;
-}
-
-.product-card--out-of-stock:hover {
-  transform: none;
-  box-shadow: 0 5px 18px rgba(24, 39, 75, 0.045);
-}
-
-.product-card__badge {
-  position: absolute;
-  top: 64px;
-  right: 16px;
-  z-index: 1;
-}
-
-.product-card__badge span {
-  display: inline-flex;
-  align-items: center;
-  padding: 5px 10px;
-  border-radius: 999px;
-  background: #fff1d6;
-  color: #9a5b00;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
+  background: #f5f6f7;
+  opacity: 0.65;
 }
 
 .product-card__topline {
   display: flex;
-  min-height: 26px;
+  min-height: 22px;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  gap: 10px;
 }
 
 .product-card__category {
-  color: #64748b;
-  font-size: 0.76rem;
-  font-weight: 700;
+  color: #7a818d;
+  font-size: 0.74rem;
+  font-weight: 600;
 }
 
 .product-card__status {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.72rem;
-  font-weight: 750;
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .product-card__status::before {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   content: "";
 }
 
 .status-in-stock {
-  color: #16834b;
+  color: #31815a;
 }
 
 .status-in-stock::before {
-  background: #22c55e;
+  background: #42a575;
 }
 
 .status-out-of-stock {
-  color: #9b4b4b;
+  color: #a05b5b;
 }
 
 .status-out-of-stock::before {
-  background: #ef7777;
+  background: #c87878;
 }
 
-.product-card__visual {
-  display: grid;
-  width: 100%;
-  height: 124px;
-  margin: 18px 0;
-  place-items: center;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+.product-card__details {
+  margin: 24px 0 20px;
 }
 
-.product-card__visual span {
-  display: grid;
-  width: 68px;
-  height: 68px;
-  place-items: center;
-  border: 1px solid rgba(99, 102, 241, 0.13);
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.8);
-  color: #5555bd;
-  font-size: 2rem;
-  font-weight: 800;
+.product-card__title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
 }
 
 .product-card__details h2 {
   margin: 0;
-  color: #172033;
-  font-size: 1.02rem;
-  font-weight: 750;
-  letter-spacing: -0.025em;
+  color: #252a33;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.product-card__badge {
+  flex-shrink: 0;
+}
+
+.product-card__badge span {
+  display: inline-block;
+  padding: 4px 7px;
+  border-radius: 5px;
+  background: #f0f1f3;
+  color: #626a76;
+  font-size: 0.65rem;
+  font-weight: 700;
 }
 
 .product-card__price {
-  margin: 8px 0 18px;
-  color: #4f46a5;
-  font-size: 1.12rem;
-  font-weight: 800;
+  margin: 9px 0 0;
+  color: #343a45;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .product-card__button {
   width: 100%;
-  min-height: 42px;
+  min-height: 39px;
   margin-top: auto;
-  border: 0;
-  border-radius: 10px;
-  background: #5146b8;
+  border: 1px solid #252a33;
+  border-radius: 7px;
+  background: #252a33;
   color: #ffffff;
   cursor: pointer;
   font: inherit;
-  font-size: 0.86rem;
-  font-weight: 750;
-  transition: background 160ms ease;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition:
+    background 150ms ease,
+    border-color 150ms ease;
 }
 
 .product-card__button:hover:not(:disabled) {
-  background: #40369e;
+  border-color: #424956;
+  background: #424956;
 }
 
 .product-card__button:disabled {
-  background: #d4d8e0;
-  color: #737b89;
+  border-color: #e0e3e8;
+  background: #e0e3e8;
+  color: #858c97;
   cursor: not-allowed;
 }
 
