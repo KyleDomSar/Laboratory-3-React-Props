@@ -19,8 +19,6 @@ function ProductCard({
     <article
       className={`product-card ${inStock ? "" : "product-card--out-of-stock"}`}
     >
-      {children && <div className="product-card__badge">{children}</div>}
-
       <div className="product-card__topline">
         <span className="product-card__category">{category}</span>
         <span
@@ -30,12 +28,11 @@ function ProductCard({
         </span>
       </div>
 
-      <div className="product-card__visual" aria-hidden="true">
-        <span>{title.charAt(0).toUpperCase()}</span>
-      </div>
-
       <div className="product-card__details">
-        <h2>{title}</h2>
+        <div className="product-card__title-row">
+          <h2>{title}</h2>
+          {children && <div className="product-card__badge">{children}</div>}
+        </div>
         <p className="product-card__price">{formattedPrice}</p>
       </div>
 
@@ -45,7 +42,7 @@ function ProductCard({
         disabled={!inStock}
         onClick={() => onAddToCart(title)}
       >
-        {inStock ? "Add to Cart" : "Unavailable"}
+        {inStock ? "Add to Cart" : "Out of Stock"}
       </button>
     </article>
   );
